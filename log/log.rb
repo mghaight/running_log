@@ -2,9 +2,9 @@ require_relative "run"
 
 class Log
 
-  def self.load ( dist )
+  def self.load dist, notes
     log = Log.new
-    log.add ( dist )
+    log.add dist, notes
     log
   end
 
@@ -12,11 +12,11 @@ class Log
     @log = []
   end
 
-  def add ( distance )
-    @log << ( Run.new ( distance ) )
+  def add distance, notes
+    @log << ( Run.new distance, notes )
   end
 
-  def write ( file )
+  def write file
     f = File.new file, "a"
     @log.each { |run| f.puts run }
     f.close
