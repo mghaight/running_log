@@ -8,11 +8,11 @@ class CommandLineInterface
     @log = Log.load ARGV[0], ARGV[1]
   end
 
-  def write
-    @log.write "log.txt"
+  def log_new
+    @log.log_new "log.yaml", "log.txt"
   end
 
 end
 
 cli = CommandLineInterface.new
-cli.write
+cli.log_new

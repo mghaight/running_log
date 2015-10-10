@@ -1,0 +1,13 @@
+---
+- !ruby/object:Run
+  distance: '5'
+  notes: Felt good for the first day back.. a little out of shape though
+  date: 2015-10-08 16:31:31.779761000 -04:00
+- !ruby/object:Run
+  distance: '5'
+  notes: A good run with herms and asher hopefully i'll be back soon!
+  date: 2015-10-09 16:32:35.715872000 -04:00
+- !ruby/object:Run
+  distance: '0'
+  notes: day off from errythin
+  date: 2015-10-10 16:33:39.595435000 -04:00
