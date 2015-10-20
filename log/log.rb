@@ -17,26 +17,6 @@ class Log
     @log << ( Run.new distance, notes )
   end
 
-  # def write file
-  # end
-
-  # def read rfile, ofile
-  # end
-
-  # def log_new rfile, ofile
-  #   f = File.new rfile, "w+"
-  #   o = File.new ofile, "w+"
-  #   yaml_log = YAML::load f
-  #   p yaml_log
-  #   p @log
-  #   # yaml_log.concat @log
-  #   # yaml_log.each { |run| o.puts run }
-  #   # o.close
-  #   # dump = YAML::dump yaml_log
-  #   # f.write dump
-  #   # f.close
-  # end
-
   def self.serialize file, arg
    File.open file, "w+" do |file|
       yaml = YAML::dump arg
@@ -59,6 +39,25 @@ class Log
     File.open tfile, "w+" do |f|
       yaml.each { |run| f.puts run.to_s }
     end
+  end
+
+  def self.totals yfile, arg
+    total = 0
+    yaml = Log.deserialize yfile
+
+    if arg === "w"
+      arg = 7
+      dur = "weekly"
+    elsif arg === "a"
+      arg = yaml.length
+      dur = "overall"
+    else
+      return false
+    end
+
+    arg.times { |i| total += yaml[-i].distance.to_i }
+    
+    puts "Total #{dur} distance: #{total} miles"
   end
 
 end

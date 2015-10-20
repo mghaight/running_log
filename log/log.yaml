@@ -11,3 +11,7 @@
   distance: '0'
   notes: day off from errythin
   date: 2015-10-10 16:33:39.595435000 -04:00
+- !ruby/object:Run
+  distance: '7'
+  notes: finally getting back to running a bit
+  date: 2015-10-20 10:18:27.784881000 -04:00
